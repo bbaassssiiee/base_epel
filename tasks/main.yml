@@ -32,7 +32,7 @@
     epel: ok
 
 - name: Install EPEL repository
-  when: epel is defined and ansible_os_family != 'Ubuntu'
+  when: epel is defined and ansible_os_family == 'RedHat'
   yum:
     name: epel-release
     state: present
